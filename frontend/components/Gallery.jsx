@@ -6,10 +6,12 @@ import Image from "next/image";
 export default async function Gallery() {
   const images = await client.fetch(galleryQuery);
 
-  console.log(images);
+  // console.log(images);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-10">
+    <>
+    <h1>Total images : {images.length}</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-10">
       {images.map((item) => (
         <div key={item._id}>
           <Image
@@ -24,5 +26,6 @@ export default async function Gallery() {
         </div>
       ))}
     </div>
+    </>
   );
 }
