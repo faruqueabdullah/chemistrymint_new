@@ -3,6 +3,8 @@ import { galleryQuery } from "@/lib/queries";
 import { urlFor } from "@/lib/imageUrl";
 import Image from "next/image";
 
+export const revalidate = 60;
+
 export default async function Gallery() {
   const images = await client.fetch(galleryQuery);
 
