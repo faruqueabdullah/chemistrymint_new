@@ -3,7 +3,7 @@ import { galleryQuery } from "@/lib/queries";
 import { urlFor } from "@/lib/imageUrl";
 import Image from "next/image";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function Gallery() {
   const images = await client.fetch(galleryQuery);
